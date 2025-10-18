@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chúc mừng 20-10</title>
+<style>
+  body {
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(180deg, #ffd6eb, #fff0f6);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Comic Sans MS', cursive;
+  }
+
+  h1 {
+    color: #e91e63;
+    font-size: 2.5em;
+    text-align: center;
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from { text-shadow: 0 0 10px #ff80ab, 0 0 20px #ff4081; }
+    to { text-shadow: 0 0 20px #f50057, 0 0 30px #ff80ab; }
+  }
+
+  .flower {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle, #ff80ab 40%, transparent 40%);
+    border-radius: 50%;
+    animation: fall linear infinite;
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateY(-10vh) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(110vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  .bouquet {
+    width: 200px;
+    animation: sway 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes sway {
+    from { transform: rotate(-3deg); }
+    to { transform: rotate(3deg); }
+  }
+
+  audio {
+    display: none;
+  }
+</style>
+</head>
+<body>
+  <h1>💐 Chúc chị 20-10 thật vui vẻ, xinh đẹp và hạnh phúc 💖</h1>
+  <img src="https://i.imgur.com/3rj1yWz.png" class="bouquet" alt="bouquet">
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9d1fce6c69.mp3" type="audio/mpeg">
+  </audio>
+  <script>
+    const colors = ['#ff80ab', '#f50057', '#ec407a', '#ffb6c1', '#ff69b4'];
+    for (let i = 0; i < 25; i++) {
+      let flower = document.createElement('div');
+      flower.classList.add('flower');
+      flower.style.left = Math.random() * 100 + 'vw';
+      flower.style.animationDuration = (4 + Math.random() * 4) + 's';
+      flower.style.background = 'radial-gradient(circle, ' + colors[Math.floor(Math.random() * colors.length)] + ' 40%, transparent 40%)';
+      document.body.appendChild(flower);
+    }
+  </script>
+</body>
+</html>
