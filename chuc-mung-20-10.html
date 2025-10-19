@@ -1,86 +1,165 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chúc mừng 20-10</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Tặng chị 20/10 🌷</title>
 <style>
-  body {
-    margin: 0;
-    overflow: hidden;
-    background: linear-gradient(180deg, #ffd6eb, #fff0f6);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: 'Comic Sans MS', cursive;
+  :root{
+    --bg1:#fff5f9;
+    --bg2:#ffe6f0;
+    --text:#d63384;
+  }
+  html,body{
+    height:100%;
+    margin:0;
+    background:linear-gradient(180deg,var(--bg1),var(--bg2));
+    overflow:hidden;
+    font-family:"Segoe UI", Roboto, Arial;
+    color:var(--text);
   }
 
-  h1 {
-    color: #e91e63;
-    font-size: 2.5em;
-    text-align: center;
-    animation: glow 2s ease-in-out infinite alternate;
+  .stage{
+    position:relative;
+    width:100%;height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    padding-bottom:6vh;
+    box-sizing:border-box;
   }
 
-  @keyframes glow {
-    from { text-shadow: 0 0 10px #ff80ab, 0 0 20px #ff4081; }
-    to { text-shadow: 0 0 20px #f50057, 0 0 30px #ff80ab; }
+  .bouquet-wrap{
+    position:relative;
+    width:300px;
+    animation:sway 4s ease-in-out infinite alternate;
+    alternate;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+  @keyframes sway{from{transform:translateY(0) rotate(-2deg)} to{transform:translateY(-6px) rotate(2deg)}}
+
+  .bouquet-img{
+display:block;
+  width:100%;
+  height:auto;
+  border-radius:12px;
+  object-fit:cover;
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.25));
   }
 
-  .flower {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background: radial-gradient(circle, #ff80ab 40%, transparent 40%);
-    border-radius: 50%;
-    animation: fall linear infinite;
+  .shine{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background: linear-gradient(120deg, transparent 10%, rgba(255,255,255,0.35) 45%, transparent 90%);
+    mix-blend-mode: screen;
+    transform: translateX(-120%);
+    animation: shineMove 6s linear infinite;
+  }
+  @keyframes shineMove{0%{transform:translateX(-120%)}100%{transform:translateX(140%)}}
+
+  .flower-fall{
+    position:fixed;
+    top:-30px;
+    font-size:20px;
+    pointer-events:none;
+    animation:fall 7s linear forwards;
+  }
+  @keyframes fall{
+    0%{transform:translateY(0) rotate(0deg);opacity:1}
+    100%{transform:translateY(110vh) rotate(360deg);opacity:0}
   }
 
-  @keyframes fall {
-    0% {
-      transform: translateY(-10vh) rotate(0deg);
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(110vh) rotate(360deg);
-      opacity: 0;
-    }
+  .messages{
+    position:fixed;
+    bottom:6vh;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    pointer-events:none;
   }
-
-  .bouquet {
-    width: 200px;
-    animation: sway 2s ease-in-out infinite alternate;
+  .msg-box{
+    background:rgba(255,255,255,0.6);
+    backdrop-filter:blur(6px);
+    padding:14px 18px;
+    border-radius:12px;
+    text-align:center;
+    color:#c2185b;
+    font-weight:500;
+    font-size:18px;
+    box-shadow:0 4px 20px rgba(255,182,193,0.4);
   }
+  .msg-line{opacity:0;transition:opacity .6s ease;}
+  .msg-line.show{opacity:1;}
 
-  @keyframes sway {
-    from { transform: rotate(-3deg); }
-    to { transform: rotate(3deg); }
-  }
-
-  audio {
-    display: none;
+  .credit{
+    position:fixed;
+    bottom:18px;
+    left:50%;
+    transform:translateX(-50%);
+    color:#f48fb1;
+    font-size:13px;
+    text-align:center;
   }
 </style>
 </head>
 <body>
-  <h1>💐 Chúc chị 20-10 thật vui vẻ, xinh đẹp và hạnh phúc 💖</h1>
-  <img src="https://i.imgur.com/3rj1yWz.png" class="bouquet" alt="bouquet">
-  <audio autoplay loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9d1fce6c69.mp3" type="audio/mpeg">
-  </audio>
-  <script>
-    const colors = ['#ff80ab', '#f50057', '#ec407a', '#ffb6c1', '#ff69b4'];
-    for (let i = 0; i < 25; i++) {
-      let flower = document.createElement('div');
-      flower.classList.add('flower');
-      flower.style.left = Math.random() * 100 + 'vw';
-      flower.style.animationDuration = (4 + Math.random() * 4) + 's';
-      flower.style.background = 'radial-gradient(circle, ' + colors[Math.floor(Math.random() * colors.length)] + ' 40%, transparent 40%)';
-      document.body.appendChild(flower);
-    }
-  </script>
+
+<div class="stage">
+  <div class="bouquet-wrap">
+    <a href='https://postimg.cc/2qvC4r6Y' target='_blank'><img src='https://i.postimg.cc/fbqkQbQV/IMG-2369.jpg' border='0' alt='IMG-2369'/></a>
+    <div class="shine"></div>
+  </div>
+
+  <div class="messages">
+    <div class="msg-box" id="msgBox"></div>
+  </div>
+
+  <div class="credit">✨ Tặng riêng — Cho mình chị :))</div>
+</div>
+
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2023/03/29/audio_20f0e377da.mp3?filename=piano-beautiful-14360.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const lines=[
+  "Nay nhân ngày 20/10 🌸",
+  "Em chúc chị thật nhiều may mắn,",
+  "Càng ngày càng xinh đẹp hơn và vui vẻ nhé 💖",
+  "Chứ trước em thấy chị hơi trầm đấy :))"
+];
+const box=document.getElementById("msgBox");
+let i=0;
+function showNextLine(){
+  if(i<lines.length){
+    const d=document.createElement("div");
+    d.className="msg-line";
+    d.textContent=lines[i++];
+    box.appendChild(d);
+    setTimeout(()=>d.classList.add("show"),100);
+    setTimeout(showNextLine,2300);
+  }
+}
+showNextLine();
+
+function createFlower(){
+  const el=document.createElement("div");
+  el.className="flower-fall";
+  el.textContent=["🌸","🌷","🌼","💮","🌹"][Math.floor(Math.random()*5)];
+  el.style.left=Math.random()*100+"vw";
+  el.style.fontSize=18+Math.random()*12+"px";
+  el.style.animationDuration=6+Math.random()*3+"s";
+  document.body.appendChild(el);
+  setTimeout(()=>el.remove(),9000);
+}
+setInterval(createFlower,300);
+</script>
+
 </body>
 </html>
